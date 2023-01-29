@@ -13,10 +13,8 @@ Year:
 # Documentation
 
 Main document for repairs:
-- Otrona_Attache_Service_Guide_Mar83.pdf
-  Teardown instructions, diagnostics, parts list
-- Otrona_Attache_Technical_Manual_Jul83.pdf
-  Schematics, theory of operation
+- [Service Guide](doc/Otrona_Attache_Service_Guide_Mar83.pdf): Teardown instructions, diagnostics, parts list
+- [Technical Manual](Otrona_Attache_Technical_Manual_Jul83.pdf): Schematics, theory of operation
 
 Only these 2 files are present here, more are available on Bitsavers:
 http://www.bitsavers.org/pdf/otrona/
@@ -50,6 +48,7 @@ Output voltages:
 ### J8: Motherboard connector
 
 Reference: Molex 09507121 (KK 396 Series)
+```
 1 - HDRV
 2 - VSYN
 3 - VIDEO
@@ -62,19 +61,26 @@ Reference: Molex 09507121 (KK 396 Series)
 10 - GND
 11 - +12V
 12 - -12V
+```
+
+POK: The power supply provides a Power Okay (POK) signal to the processor' to
+initialize the system only when power is properly stabilized.
 
 ### J5: Connector for CRT module
 
 Reference: Molex TODO (KK 396 Series)
+```
 1 - VSYN
 2 - GND
 3 - +15
 4 - VIDEO
 5 - HDRV
+```
 
 ### J6: Floppy power connector
 
 Reference: Molex TODO (KK 396 Series)
+```
 1 - +12V
 2 - +12V
 3 - GND
@@ -83,11 +89,9 @@ Reference: Molex TODO (KK 396 Series)
 6 - GND
 7 - GND
 8 - +5V
-
+```
 TO DO: More pinouts, pictures,
 
-POK: The power supply provides a Power Okay (POK) signal to the processor' to
-initialize the system only when power is properly stabilized.
 
 ## Troubleshooting:
 
