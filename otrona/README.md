@@ -21,7 +21,10 @@ http://www.bitsavers.org/pdf/otrona/
 
 # Power supply
 
-PSU Serial:
+```
+Model: 40-051202 REV A
+Serial: 21831009
+```
 
 **Usual caution regarding high voltages apply here.**
 **Please be safe**
@@ -111,13 +114,18 @@ I'm surprised at how silent the fan is.
 
 # Motherboard
 
-Serial: TO DO
-ROM version: TO DO
+```
+Model: 40-051201
+Serial: 22314024
+ROM version: Rev D
+```
 
 Motherboard requires both 5V and 15V in order to work. -12V is not required for booting.
 Luckily it uses no custom chips, all the custom logic is implemented with bipolar PROMs. These can be dumped and duplicated (albeit programmers are hard to come by)
 
 There is a RTC powered by 2 button cells, that tend to leak... On this board, it leaked but luckily the corrosion is minimal.
+
+There are also a few boches. TODO: Document
 
 Original symtoms: stuck screen with random characters, but after a while it started to show uneven dots and lines without any proper character display.
 
