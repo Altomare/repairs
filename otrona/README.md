@@ -71,7 +71,7 @@ initialize the system only when power is properly stabilized.
 
 ### J5: Connector for CRT module
 
-Reference: Molex TODO (KK 396 Series)
+Reference: Molex 26192051 (KK 396 Series). Not an exact match but compatible.
 ```
 1 - VSYN
 2 - GND
@@ -82,7 +82,7 @@ Reference: Molex TODO (KK 396 Series)
 
 ### J6: Floppy power connector
 
-Reference: Molex TODO (KK 396 Series)
+Reference: Molex 26192081 (KK 396 Series). Not an exact match but compatible.
 ```
 1 - +12V
 2 - +12V
@@ -93,8 +93,8 @@ Reference: Molex TODO (KK 396 Series)
 7 - GND
 8 - +5V
 ```
-TO DO: More pinouts, pictures,
 
+TO DO: More pinouts, pictures,
 
 ## Troubleshooting:
 
