@@ -184,7 +184,15 @@ Reworked area (probably factory mistakes):
 
 ## Compatible parts
 
-CRT controller: SMC CRT5027. Compatible with TI TMS9927. Might also be compatible with the TI TMS9937 (= SMC CRT5037 = Mostek MK3807P-4 = SND5037)
+| Marking | Role    | Original       | Replacements |
+| ------- | ------- | -------------- | ------------ |
+| U401    | Display | SMC CRT5027    | TI TMS9927   |
+| U102    | DMA     | Intel D8237A-4 | AMD AM9517A  |
+
+U401 might also be compatible with TI TMS9937. Other references are:
+* SMC CRT5037
+* Mostek MK3807P-4 
+* Solid State Scientific (SSS) SND5037E / SND5037F
 
 # CRT
 
