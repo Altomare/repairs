@@ -129,11 +129,10 @@ There is a RTC powered by 2 button cells, that tend to leak... On this board, it
 
 It's an early revision of the board, and features multiple factory botches that are documented below.
 
+## Troubleshooting
 
 Original symtoms: [stuck screen with random characters](pic/character_garbage.jpg).
 After a while it started to show [uneven dots and lines](pic/dots_lines.jpg) without any proper character display.
-
-TO-DO: pictures
 
 Debugging steps:
 - ROM dumps: boot and character. Both are fine
@@ -144,6 +143,7 @@ Debugging steps:
 - Cleaned up corrosion. The battery contacts will need to be replaced.
 - Checked the following ICs in another computer, confirmed working: CPU, CTC, CRT controller, SIO, PIO, FDC, DMA
 - Checked the POK signal. It's working as intended: NMI pin o++n the Z80 is pulled down until POK is up, which basically halts the Z80 with interruptions.
+- VSYN reads 23.6 Hz and HDRV about 6.02 MHz. Value doesn't change when POK is applied which leads me to assume the video chip is not properly configured by the CPU.
 
 TO-DO:
 - Use logic analyzer to see what the CPU is doing
