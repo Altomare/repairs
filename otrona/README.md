@@ -130,7 +130,10 @@ There is a RTC powered by 2 button cells, that tend to leak... On this board, it
 It's an early revision of the board, and features multiple factory botches that are documented below.
 
 
-Original symtoms: stuck screen with random characters, but after a while it started to show uneven dots and lines without any proper character display.
+Original symtoms: [stuck screen with random characters](pic/character_garbage.jpg).
+After a while it started to show [uneven dots and lines](pic/dots_lines.jpg) without any proper character display.
+
+TO-DO: pictures
 
 Debugging steps:
 - ROM dumps: boot and character. Both are fine
@@ -173,9 +176,10 @@ TO-DO: Picture with jumper locations
 TO-DO: Document jumper purposes
 
 Bodges:
+* U603: Pin 15 lifted, soldered to pin 16
 * U605: 4-14
-* U506: 16 lifted, connected to U511-1
-* U454 2 to some via (TO-DO)
+* U506: 16 lifted, connected to U511-1 (also shorted with pin 2?)
+* U434 pin 2 to via below U401. Via is between U401 pin 38 and U430 pin 3.
 
 Reworked area (probably factory mistakes):
 * near U253, broken trace?
@@ -189,10 +193,11 @@ Reworked area (probably factory mistakes):
 | U401    | Display | SMC CRT5027    | TI TMS9927   |
 | U102    | DMA     | Intel D8237A-4 | AMD AM9517A  |
 
-U401 might also be compatible with TI TMS9937. Other references are:
+U401 might also be compatible with TI TMS9937. Second sources are:
 * SMC CRT5037
 * Mostek MK3807P-4 
 * Solid State Scientific (SSS) SND5037E / SND5037F
+**Update**: Tried using a Mostek MK3807 for U401, it does not work but I suspect the chip might be dead...
 
 # CRT
 
