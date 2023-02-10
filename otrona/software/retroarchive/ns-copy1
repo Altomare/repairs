@@ -1,0 +1,75 @@
+From donm@.MISSING-HOST-NAME. Tue May  6 21:58:52 2003
+Date: Tue, 6 May 2003 21:57:31 -0700 (PDT)
+From: Don Maslin <donm>
+To: donm (Don Maslin)
+Subject: (fwd) HOWTO: transfer files to CP/M-80 from the Internet using
+    Kermit
+
+From: Don Maslin <donm@crash.cts.com>
+To: donm
+Subject: (fwd) HOWTO: transfer files to CP/M-80 from the Internet using Kermit
+
+-- forwarded message --
+Path: dca1-nnrp1.news.algx.net!dca1-feed1.news.algx.net!ord2-feed1.news.algx.net!allegiance!news-out.triton.net!triton.net!newsfeeder.triton.net!news-spur1.maxwell.syr.edu!news.maxwell.syr.edu!newsfeed!wn13feed!worldnet.att.net!204.127.198.203!attbi_feed3!attbi.com!rwcrnsc53.POSTED!not-for-mail
+From: "Howard M. Harte" <hharte@hartetec.com>
+Newsgroups: comp.os.cpm
+Subject: HOWTO: transfer files to CP/M-80 from the Internet using Kermit
+Lines: 44
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Newsreader: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Message-ID: <__Ira.695944$S_4.741685@rwcrnsc53>
+NNTP-Posting-Host: 12.240.144.247
+X-Complaints-To: abuse@attbi.com
+X-Trace: rwcrnsc53 1051679802 12.240.144.247 (Wed, 30 Apr 2003 05:16:42 GMT)
+NNTP-Posting-Date: Wed, 30 Apr 2003 05:16:42 GMT
+Organization: AT&T Broadband
+Date: Wed, 30 Apr 2003 05:16:42 GMT
+Xref: dca1-feed1.news.algx.net comp.os.cpm:10969
+
+Hi,
+
+    I connected up the on-line Horizon's second serial port to the terminal
+server, so you can upload/download files to it via Kermit.
+
+    First, connect to the console port with telnet, ie:
+telnet://www.cpm80.com:2003
+
+    Next, connect to the second serial port with C-Kermit under Linux, or
+Kermit-95 under Windows.  Connect to the following address:
+www.cpm80.com:2004
+
+    Put C-Kermit or Kermit-95 into "Server" mode.
+
+    Run Kermit-80 on the Northstar: A> KERMIT
+
+    Now, you can do things like: remote dir
+    remote cd <directory>
+    get <filename>
+    send <filename>
+
+    I made a new CP/M Hard Disk Unit on Drive C: for people to upload
+programs to.  This way you can try out your favorite CP/M software if it's
+not already on the machine.
+
+    Note that the text output in Kermit-95 didn't seem right to me.  The
+screen output from the Horizon looked much better in telnet under Linux, and
+Telnet under Windows XP.  I think there is something not set right with the
+newline translation under Kermit-95.  This is noticeable if you use
+Kermit-95 to connect to the console, or if you do a "remote dir" for example
+from the CP/M machine to the kermit server.
+
+    In addition, I added the two other serial ports from the Altos 5-15
+running MP/M-II, so if you connect first to: telnet://www.cpm80.com:2005
+(console port) and then to either or both telnet://www.cpm80.com:2006 or
+telnet://www.cpm80.com:2007 you can run multiple users.  Note that no
+programs (including DIR) are copied to the other user accounts, so perhaps
+someone can take care of that for me. :)
+
+    If you have any question, please feel free to ask...
+
+    Howard
+
+
+-- end of forwarded message --
