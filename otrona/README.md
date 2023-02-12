@@ -8,6 +8,7 @@ It's completely dead: power switch does nothing, fan does not spin and nothing l
 Looking at the manuals, this computer should behave like a terminal when no floppy is inserted, and it has an extensive diagnostic menu accessible through a keyboard shorctut.
 
 Serial: 1533
+
 Year: 1982~1983
 
 # Documentation
@@ -145,6 +146,7 @@ Debugging steps:
 - Checked the POK signal. It's working as intended: NMI pin on the Z80 is pulled down until POK is up, which basically halts the Z80 with interruptions.
 - VSYN reads 23.6 Hz and HDRV about 6.02 MHz. Value doesn't change when POK is applied which leads me to assume the video chip is not properly configured by the CPU.
 - Dumped PROMs after receiving the adapters. Documented in `rom/README.md`
+- Checking bus pins on the CPU, it's left floating. When it happens, address bus is stuck on 0x43 or 0x3F...? 
 
 TO-DO:
 - Use logic analyzer to see what the CPU is doing
@@ -168,17 +170,16 @@ Jumpers:
 Jumpers (wrapped):
 * J311: 2-3
 * J602: 1-8 2-3
-* J603: 
+* J603: 1-2
 * J604: 2-7 5-6
 
-TO-DO: Check jumper orientation for wrapped ones
-TO-DO: Picture with jumper locations
-TO-DO: Document jumper purposes
+TO-DO:
+* Picture with jumper locations
 
 Bodges:
 * U603: Pin 15 lifted, soldered to pin 16
 * U605: 4-14
-* U506: 16 lifted, connected to U511-1 (also shorted with pin 2?)
+* U506: 16 lifted, connected to U511-1
 * U434 pin 2 to via below U401. Via is between U401 pin 38 and U430 pin 3.
 
 Reworked area (probably factory mistakes):
@@ -197,6 +198,7 @@ U401 might also be compatible with TI TMS9937. Second sources are:
 * SMC CRT5037
 * Mostek MK3807P-4 
 * Solid State Scientific (SSS) SND5037E / SND5037F
+
 **Update**: Tried using a Mostek MK3807 for U401, it does not work but I suspect the chip might be dead...
 
 # CRT
