@@ -142,13 +142,13 @@ Debugging steps:
 - Symptoms are still the same. Composite output shows wobbly lines. Vsync and Hsync on the CRT connector are fine, but video signal does not move
 - Cleaned up corrosion. The battery contacts will need to be replaced.
 - Checked the following ICs in another computer, confirmed working: CPU, CTC, CRT controller, SIO, PIO, FDC, DMA
-- Checked the POK signal. It's working as intended: NMI pin o++n the Z80 is pulled down until POK is up, which basically halts the Z80 with interruptions.
+- Checked the POK signal. It's working as intended: NMI pin on the Z80 is pulled down until POK is up, which basically halts the Z80 with interruptions.
 - VSYN reads 23.6 Hz and HDRV about 6.02 MHz. Value doesn't change when POK is applied which leads me to assume the video chip is not properly configured by the CPU.
+- Dumped PROMs after receiving the adapters. Documented in `rom/README.md`
 
 TO-DO:
 - Use logic analyzer to see what the CPU is doing
 - Socket and test RAM chips. Might be overkill but will make maintenance easier for later.
-- Dump PROMs
 - Reflow solder joins near corrosion area. 
 - Make new contacts for the battery holder, using bent wires
 
