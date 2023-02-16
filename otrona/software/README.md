@@ -7,13 +7,25 @@ Specs:
 * 40 tracks per side
 * 48 TPI drive
 
+Notes:
+* 3 tracks reserved for BIOS
+* Track 39 on side 1 left blank? Not sure why
+
 # Tools
 
 The `diskdefs` file is for use with `cpmtools`. It is from Idkraemer over on vcfed.
+`libdskrc ` comes from the same source, but I have not tested it (yet).
 [Original link](https://forum.vcfed.org/index.php?threads/otrona-attache.1240458/)
+[Other thread](https://forum.vcfed.org/index.php?threads/otrona-attache-mega-haul.73290/)
 
-I have not yet managed to open the images found below with these diskdefs...
-I suspect there is something wrong with my `cpmtools` or `libdsk` build.
+The file has been slightly modified and works with all images present here, using CPMTools 2.23.
+
+Some commands:
+```bash
+dskid -type imd bitsavers/Attache_Boot_2.2.5.IMD
+cpmls -D -f otr1 -T tele retroarchive/otr-util.td0
+cpmcp -f otr1 -T tele retroarchive/otr-util.td0 "0:*" retroarchive/otr-util/
+```
 
 # Otrona software
 

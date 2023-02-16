@@ -1,8 +1,4 @@
-BEGIN OTR1  Otrona Attache - DSDD 48 tpi 5.25" - 512 x 10
-INSERT 22DISK DEFINITION HERE
-END
-
-#OTR1  Otrona Attache - DSDD 48 tpi 5.25" - 512 x 10
+# OTR1  Otrona Attache - DSDD 48 tpi 5.25" - 512 x 10
 diskdef otr1
   seclen 512
   tracks 80
@@ -10,40 +6,13 @@ diskdef otr1
   blocksize 2048
   maxdir 128
   skew 1
-  boottrk 3
+  boottrk 0
+  # Skip 3 BIOS tracks on bootable disks
+  offset 30720
   os 2.2
 end
 
-#libdsk data below
-[otr1]
-description = OTR1  Otrona Attache - DSDD 48 tpi 5.25" - 512 x 10
-sides = eagle
-cylinders = 80
-heads = 2
-secsize = 512
-sectors = 10
-secbase = 1
-datarate = DD
-
-#Flashfloppy/GOTEK
-[otr1]
-cyls = 80
-heads = 2
-secs = 1
-interleave = 1
-bps = 512
-id = 1
-#rpm = 360
-rpm = 300
-rate = 250
-mode = mfm
-iam = no
-
-BEGIN OTR2  Otrona Attache - DSDD 96 tpi 5.25" - 512 x 10
-INSERT 22DISK DEFINITION HERE
-END
-
-#OTR2  Otrona Attache - DSDD 96 tpi 5.25" - 512 x 10
+# OTR2  Otrona Attache - DSDD 96 tpi 5.25" - 512 x 10
 diskdef otr2
   seclen 512
   tracks 160
@@ -52,32 +21,6 @@ diskdef otr2
   maxdir 128
   skew 1
   boottrk 3
+  offset 30720
   os 2.2
 end
-
-#libdsk data below
-#ORDER cylinders
-
-[otr2]
-description = OTR2  Otrona Attache - DSDD 96 tpi 5.25" - 512 x 10
-sides = outback
-cylinders = 160
-heads = 2
-secsize = 512
-sectors = 10
-secbase = 1
-datarate = DD
-
-#Flashfloppy/GOTEK
-[otr2]
-cyls = 160
-heads = 2
-secs = 10
-interleave = 1
-bps = 512
-id = 1
-#rpm = 360
-rpm = 300
-rate = 250
-mode = mfm
-iam = no
