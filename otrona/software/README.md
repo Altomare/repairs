@@ -8,7 +8,7 @@ Specs:
 * 48 TPI drive
 
 Notes:
-* 3 tracks reserved for BIOS
+* 3 tracks reserved for BIOS and CP/M
 * Track 39 on side 1 left blank? Not sure why
 
 # Tools
