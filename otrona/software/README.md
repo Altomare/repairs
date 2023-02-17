@@ -59,11 +59,6 @@ http://www.bitsavers.org/pdf/otrona/firmware/
 https://www.wps.com/archives/Otrona-Attache-8-16-diskettes/ (old link)
 http://warehouse.sr-ix.com/Project-Archive/Otrona%20Attache%20diskettes/index.html
 
-Many thanks to the following people for their work in preservation:
-* Tom Jennings
-* Don Maslin
-* Al Kossow
-
 # TO-DO
 
 * List dumped versions of BIOS & CP/M

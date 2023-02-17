@@ -225,3 +225,14 @@ Missing / broken parts:
 
 @vince120 modeled and printed a new feet assembly, using FreeCAD.
 It's not yet on Thingiverse but will be uploaded there once the design is finished. (TO-DO)
+
+# Thanks
+
+Many thanks to all the following people for their work and help
+* Fred Stark for providing the computers and ROM reverse-engineering
+* Vince for his 3D printing skills, making very accurate replacement parts
+* Al Kossow for his preservation work
+* Don Maslin for his preservation work
+* Tom Jennings for his preservation work
+* Gene Buckle for preserving Don Maslin's work
+* Barry Rodewald for his work on MAME

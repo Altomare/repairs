@@ -31,3 +31,5 @@ Pictures of this setup are in `../pic`.
 
 Also present are dumps from bitsavers and Don Maslin's archive.
 The one from Don Maslin's are identical to Rev F on bitsavers.
+
++ Rev H dump comes from MAME
