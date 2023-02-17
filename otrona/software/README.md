@@ -51,3 +51,6 @@ otr-utl.zip      201166  ZIP     No description available.
 otr-ws.zip        88303   ZIP    Wordstar 3.0 for the Attache'
 otrnasrc.zip     177761  ZIP     No description available.
 ```
+
+The files in `bitsavers` are from:
+http://www.bitsavers.org/pdf/otrona/firmware/
