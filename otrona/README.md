@@ -20,6 +20,10 @@ Main document for repairs:
 Only these 2 files are present here, more are available on Bitsavers:
 http://www.bitsavers.org/pdf/otrona/
 
+# Software
+
+See [software](software/README.md) and [rom](rom/README.md).
+
 # Power supply
 
 ```

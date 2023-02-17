@@ -16,7 +16,7 @@ U401 CRT5027 CRT controller
 U413 BPROM in the video circuitry
 U600 D7654AC Floppy controller
 
-## Can boot without
+## Can initialize screen without
 
 Can remove, no effect:
 U501 Z80-PIO

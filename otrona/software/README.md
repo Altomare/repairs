@@ -27,7 +27,7 @@ cpmls -D -f otr1 -T tele retroarchive/otr-util.td0
 cpmcp -f otr1 -T tele retroarchive/otr-util.td0 "0:*" retroarchive/otr-util/
 ```
 
-# Otrona software
+# Software images
 
 The following files in `retroarchive` are from:
 http://www.retroarchive.org/maslin/disks/otrona/
@@ -43,14 +43,21 @@ oattache.td0     224444  DSDD    Otrona Attache' system disk
 otr-asm.zip      108819  ZIP     No description available.
 otr-bas.zip      149619  ZIP     No description available.
 otr-dos.zip      260513  ZIP     No description available.
-otr-mex.zip      105559   ZIP    MEX communications
-otr-mp.zip        71225   ZIP    MultiPlan for the Attache'
+otr-mex.zip      105559  ZIP     MEX communications
+otr-mp.zip        71225  ZIP     MultiPlan for the Attache'
 otr-srce.td0     203336  DSDD    Attache' ASM/BAS/MAC source code
 otr-util.td0     204410  DSDD    Attache' Utilities
 otr-utl.zip      201166  ZIP     No description available.
-otr-ws.zip        88303   ZIP    Wordstar 3.0 for the Attache'
+otr-ws.zip        88303  ZIP     Wordstar 3.0 for the Attache'
 otrnasrc.zip     177761  ZIP     No description available.
 ```
 
 The files in `bitsavers` are from:
 http://www.bitsavers.org/pdf/otrona/firmware/
+
+
+# TO-DO
+
+* List dumped versions of BIOS & CP/M
+* How to reconstruct a floppy image to write or use with floppy emulators
+* Dumped software list
