@@ -26,3 +26,8 @@ Because U603 had a leng bent and soldered to another, I could not re-bend the le
 I removed the solder between the two legs, put heatshrink to isolate the bent leg and then added a temporary leg salvaged from a dead resistor array.
 
 Pictures of this setup are in `../pic`.
+
+# Other dumps from online
+
+Also present are dumps from bitsavers and Don Maslin's archive.
+The one from Don Maslin's are identical to Rev F on bitsavers.
