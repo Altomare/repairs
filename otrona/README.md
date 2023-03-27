@@ -161,13 +161,26 @@ Debugging steps:
 - Looks like the address bus is not stuck.
 - When probing it, the composite display suddenly went black. No vertical or horizontal sync on the internal video pins.
 - Pin 12 of (U401) CRT5207 is stuck, likely a clock issue. Tracing it back to U429, pin 2 should receive a clock but nothing. Replaced transistor Q403 and it's running fine again.
+- Removed all 32 RAM chips, put in new sockets.
+- 12 of the 32 chips tested bad. :(
+- First boot with new RAM, alim went into safety mode after 1 sec. Tried again with a thermal camera, no success. Guess something burned.
+- A1 is now stuck high.
+  There is a short between 5V and A1 in the RAM section (short not present on the other side of the buffer).
+  After unsocketing all chips, same issue.
+- Tried reflowing all A1 and 5V pins. No change
+- Put a 10 Ohm power resistor betewen A1 and ground. Thermal camera revealed the tiny solder whisker.
+- After fixing, no more short but the computer is back to displaying wobbly lines.
+- On the oscilloscope, it looks like the lower address bus is incrementing again, so maybe something went wrong with the ROM circuitry.
+- Chip Enable signal on the ROM is still good. no NMI either
+- Removed U253 (74LS373) as maybe the factory rework near it went bad. Chip tests OK, rework was for a damaged pad. Installed new socket and cleaner rework, no change.
 
 Dead parts summary:
 - U508: 74LS273
 - Q403: 2N3906
+- RAM: 4116-15 * 12
 
 TO-DO:
-- Socket and test RAM chips. Might be overkill but will make maintenance easier for later.
+- Check data bus & upper address bus. 
 - Reflow solder joins near corrosion area. 
 - Make new contacts for the battery holder, using bent wires
 
