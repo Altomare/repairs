@@ -10,7 +10,7 @@ Initial components inspection:
 * F201 near the phone line is covered in white dust, bad plastic
 * MA101 has been replaced, ugly solder joints, no radiator and appears to be in the wrong orientation?
 * J2 plastic is covered in white dust, but the gold plated pins are fine
-* BT1 will need replacing, no corrosion but likely empt
+* BT1 will need replacing, no corrosion but likely empty
 * Some corrosion on Q101(s heatsink)
 * Some ground plane corrosion near the RAM/ROM socket
 
@@ -23,6 +23,24 @@ Parts references:
 * Q101: IRF9Z10
 * F201: Radial fuse T2.5A 250VAC
 * MA101: (not original) L7812CV with a 2012 (!) datecode. Should be a 78M08
+
+## Work done
+
+Replaced the following:
+* SW101: corroded, contacts broken inside
+* RL101: likely some premature wear
+* MA101: wrong part
+* F201: damaged plastic
+
+Other repairs:
+* Clear plastic thingy used as a stop for the feet. Re-glued with cyanoacrylate
+* Battery contact corrosion cleanup. Should be coated with zinc or nickel but it's riveted with melted plastic. Good enough
+* Plastic wheel for contrast was not properly held to the potentiometer, due to a broken clip. Used some black hot glue
+
+It now works properly :)
+
+To do:
+* Replace coin cell. I think it's only used for the internal phone book/directory
 
 ## Resources
 
