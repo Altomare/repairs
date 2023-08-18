@@ -56,47 +56,28 @@ Output voltages:
 ### J8: Motherboard connector
 
 Reference: Molex 09507121 (KK 396 Series)
-```
-1 - HDRV
-2 - VSYN
-3 - VIDEO
-4 - AUDIO GND
-5 - AUDIO
-6 - POK*
-7 - +5V
-8 - key ?
-9 - GND
-10 - GND
-11 - +12V
-12 - -12V
-```
+
+|    1 |    2 |     3 |         4 |     5 |    6 |   7 |    8 |   9 |  10 |   11 |   12 |
+| ---- | ---- | ----- | --------- | ----- | ---- | --- | ---- | --- | --- | ---- | ---- |
+| HDRV | VSYN | VIDEO | AUDIO GND | AUDIO | POK* | +5V | key? | GND | GND | +12V | -12V |
 
 > POK: The power supply provides a Power Okay (POK) signal to the processor to initialize the system only when power is properly stabilized.
 
 ### J5: Connector for CRT module
 
 Reference: Molex 26192051 (KK 396 Series). Not an exact match but compatible.
-```
-1 - VSYN
-2 - GND
-3 - +15
-4 - VIDEO
-5 - HDRV
-```
+
+|    1 |   2 |   3 |     4 |    5 |
+| ---- | --- | --- | ----- | ---- |
+| VSYN | GND | +15 | VIDEO | HDRV |
 
 ### J6: Floppy power connector
 
 Reference: Molex 26192081 (KK 396 Series). Not an exact match but compatible.
-```
-1 - +12V
-2 - +12V
-3 - GND
-4 - GND
-5 - +5V
-6 - GND
-7 - GND
-8 - +5V
-```
+
+|    1 |    2 |   3 |   4 |   5 |   6 |   7 |   8 |
+| ---- | ---- | --- | --- | --- | --- | --- | --- |
+| +12V | +12V | GND | GND | +5V | GND | GND | +5V | 
 
 TO-DO: More pinouts, pictures,
 
