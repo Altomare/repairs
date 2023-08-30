@@ -155,13 +155,13 @@ Debugging steps:
 * Chip Enable signal on the ROM is still good. no NMI either
 * Removed U253 (74LS373) as maybe the factory rework near it went bad. Chip tests OK, rework was for a damaged pad. Installed new socket and cleaner rework, no change.
 * 2023/08:
-** Got a logic analyzer and a custom made interface board for the Z80 bus
-** All the read instructions are wrong and D5 is stuck low. The first one should be `C3` but ends up being `E3`. Nothing obvious on the logic analyzer capture that matches the D5 high pattern
-** Removed all the chips that communicate with D5: SIO, PIO, CTC, Floppy, Video bus transceivers. Also lifted the D5 pin of the DMA controller. I could not remove it as it's generating signals needed for reading the boot ROM
-** Issue persists when the only thing I have talking on the bus are the CPU and RAM transceivers
-** More probing, turns out there's a tiny solder bridge under a RAM socket, between data out and A6 (under U225). RAM A6 has a pullup resistor, hence the signal being stuck high. As the same transceiver is used for EPROM, that means it was stuck high only the EPROM was read.
-** Verdict: soldering 32 sockets late at night is a veeery bad idea.
-** It now boots properly, I got the "Otrona Attache" text then the terminal mode prompt. :)
+  * Got a logic analyzer and a custom made interface board for the Z80 bus
+  * All the read instructions are wrong and D5 is stuck low. The first one should be `C3` but ends up being `E3`. Nothing obvious on the logic analyzer capture that matches the D5 high pattern
+  * Removed all the chips that communicate with D5: SIO, PIO, CTC, Floppy, Video bus transceivers. Also lifted the D5 pin of the DMA controller. I could not remove it as it's generating signals needed for reading the boot ROM
+  * Issue persists when the only thing I have talking on the bus are the CPU and RAM transceivers
+  * More probing, turns out there's a tiny solder bridge under a RAM socket, between data out and A6 (under U225). RAM A6 has a pullup resistor, hence the signal being stuck high. As the same transceiver is used for EPROM, that means it was stuck high only the EPROM was read.
+  * Verdict: soldering 32 sockets late at night is a veeery bad idea.
+  * It now boots properly, I got the "Otrona Attache" text then the terminal mode prompt. :)
 
 Dead parts summary:
 - U508: 74LS273
