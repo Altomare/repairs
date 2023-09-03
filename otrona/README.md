@@ -241,16 +241,16 @@ PCB label: 17954 601-326-007
 Electrolytic capacitor list:
 | Marking | Volt | Cap    | Diameter | Pitch | Notes         |
 | ------- | ---- | ------ | -------- | ----- | ------------- |
-| C1      | 50V  | 100µF  |          |       |               |
-| C4      | 16V  | 1000µF |          |       |               |
-| C8      | 16V  | 1000µF |          |       |               |
-| C9      | 100V | 47µF   |          |       |               |
-| C10     | 63V  | 10µF   |          |       |               |
-| C17     | 25V  | 10µF   |          |       | **Bipolar**   |
-| C18     | 25V  | 10µF   |          |       | **Bipolar**   |
-| C19     | 50V  | 100µF  |          |       | 25V in manual |
-| C23     | 100V | 47µF   |          |       | 63V in manual |
-| C24     | 100V | 47µF   |          |       | 63V in manual |
+| C1      | 50V  | 100µF  | 10mm     |       |               |
+| C4      | 16V  | 1000µF | 13mm     |       |               |
+| C8      | 16V  | 1000µF | 13mm     |       |               |
+| C9      | 100V | 47µF   | 10mm     |       |               |
+| C10     | 63V  | 10µF   | 10mm     |       |               |
+| C17     | 25V  | 10µF   | 16.2mm   |       | **Bipolar**   |
+| C18     | 25V  | 10µF   | 16.2mm   |       | **Bipolar**   |
+| C19     | 50V  | 100µF  | 13mm     |       | 25V in manual |
+| C23     | 100V | 47µF   | 10mm     |       | 63V in manual |
+| C24     | 100V | 47µF   | 10mm     |       | 63V in manual |
 
 Values match the schematics in technical manual, section A-10
 
