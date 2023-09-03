@@ -48,7 +48,7 @@ Despite the sandwich construction, everything can be taken apart easily and has 
 Output voltages:
 - 15V for the CRT board
 - 12V
-- 5V 
+- 5V
 - -12V
 
 ## Pinouts
@@ -77,7 +77,7 @@ Reference: Molex 26192081 (KK 396 Series). Not an exact match but compatible.
 
 |    1 |    2 |   3 |   4 |   5 |   6 |   7 |   8 |
 | ---- | ---- | --- | --- | --- | --- | --- | --- |
-| +12V | +12V | GND | GND | +5V | GND | GND | +5V | 
+| +12V | +12V | GND | GND | +5V | GND | GND | +5V |
 
 TO-DO: More pinouts, pictures,
 
@@ -110,7 +110,7 @@ Motherboard requires all power rails and the POK signal in order to boot.
 For testing on the bench, you can use an ATX PSU to generate -12V, 5V and 12V. You will also need to put 5V on the POK line.
 
 Luckily it uses no custom chips, all the custom logic is implemented with bipolar PROMs. These can be dumped and duplicated, albeit programmers are hard to come by...
-So far the only hard to replace part I've seen is the 12.324 MHz crystal for the video clock 
+So far the only hard to replace part I've seen is the 12.324 MHz crystal for the video clock
 
 There is a RTC powered by 2 button cells, that tend to leak... On this board, it leaked but luckily the corrosion is minimal.
 
@@ -214,14 +214,28 @@ Reworked area (probably factory mistakes):
 
 U401 might also be compatible with TI TMS9937. Second sources are:
 * SMC CRT5037
-* Mostek MK3807P-4 
+* Mostek MK3807P-4
 * Solid State Scientific (SSS) SND5037E / SND5037F
 
 **Update**: Tried using a Mostek MK3807 for U401, it does not work but I suspect the chip might be dead...
 
 # CRT
 
-TO-DO
+Electrolytic capacitor list:
+| Marking | Volt | Cap    | Diameter | Pitch | Notes         |
+| ------- | ---- | ------ | -------- | ----- | ------------- |
+| C1      | 50V  | 100µF  |          |       |               |
+| C4      | 16V  | 1000µF |          |       |               |
+| C8      | 16V  | 1000µF |          |       |               |
+| C9      | 100V | 47µF   |          |       |               |
+| C10     | 63V  | 10µF   |          |       |               |
+| C17     | 25V  | 10µF   |          |       | **Bipolar**   |
+| C18     | 25V  | 10µF   |          |       | **Bipolar**   |
+| C19     | 50V  | 100µF  |          |       | 25V in manual |
+| C23     | 100V | 47µF   |          |       | 63V in manual |
+| C24     | 100V | 47µF   |          |       | 63V in manual |
+
+Values match the schematics in technical manual, section A-10
 
 # Floppy
 
