@@ -180,8 +180,8 @@ Dead parts summary:
 
 TO-DO:
 - Check RAM issues, probably a solder bridge
-- Reflow solder joins near corrosion area. 
-- Make new contacts for the battery holder, using bent wires OR add a 
+- Reflow solder joins near corrosion area.
+- Make new contacts for the battery holder, using bent wires OR add a CR2032 battery holder on wires...
 
 ## Factory configuration & bodges
 
@@ -232,11 +232,23 @@ U401 might also be compatible with TI TMS9937. Second sources are:
 
 # CRT
 
-Hand written label: "SN 179534"
+Indicators:
+* Hand written label: "SN 179534"
+* PCB markings: Data RAy Corp 40-051204-A 601-326-002A 
+* PCB label: 17954 601-326-007
 
-PCB marking: 40-051204-A
+State:
+* Lots of dust
+* The tube is lightly marked but it's only lines, so everything's fine :)
+* C4 and C8 are leaky. I've read some reports of Otrona displays going bad so that sounds like a culprit.
+* Rusty screws, very rusty CRT grounding spring
 
-PCB label: 17954 601-326-007
+TO-DO:
+- Clean all that dust & rust
+- Measure capacitor ESR
+- Test & calibrate
+
+## Capacitors
 
 Electrolytic capacitor list:
 | Marking | Volt | Cap    | Diameter | Pitch | Notes         |
@@ -254,15 +266,15 @@ Electrolytic capacitor list:
 
 Values match the schematics in technical manual, section A-10
 
-The tube is lightly marked but it's only lines, so everything's fine :)
+Here's a simple Mouser BOM. I have not checked ESR requirements
 
-C4 and C8 are leaky. I've read some reports of Otrona displays going bad so that sounds like a culprit.
-
-TO-DO:
-- Clean all that dust
-- Measure capacitor sizes
-- Test & calibrate
-- If video is bad, replace caps & measure ESR on old ones
+| Qt | Desc             | Mouser ref        |
+| -- | ---------------- | ----------------- |
+| 3  | 100V 47µF        | 647-UHE2A470MPD   |
+| 2  | 16V 1000µF       | 647-UHE1C102MHD6  |
+| 2  | 25V 10µF Bipolar | 667-ECE-A1HN100UB |
+| 2  | 50V 100µF        | 647-UPM1H101MPD6  |
+| 1  | 63V 10µF         | 647-UCS2C100MPD   |
 
 # Floppy
 
