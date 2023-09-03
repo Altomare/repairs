@@ -162,15 +162,26 @@ Debugging steps:
   * More probing, turns out there's a tiny solder bridge under a RAM socket, between data out and A6 (under U225). RAM A6 has a pullup resistor, hence the signal being stuck high. As the same transceiver is used for EPROM, that means it was stuck high only the EPROM was read.
   * Verdict: soldering 32 sockets late at night is a veeery bad idea.
   * It now boots properly, I got the "Otrona Attache" text then the terminal mode prompt. :)
+* Keyboard debug:
+  * Keyboard doesn't work. Signals on the keyboard connector look OK.
+  * U504 is fine. Signal on pin 10 of U511 (LM339N) is fine, but nothing on pin 13
+  * Put in a socket, replaced U511 and the keyboard work fine.
+  * Doesn't work on every boot. Tried swapping the PIO, same result. Turns out it's a flaky single wipe socket. CPU socket is not really good either.
+* Monitor tests (see manual 3-10):
+  * Screen patterns OK
+  * Keyboard OK
+  * RAM issues, likely related to the upper addresses and a short on them...
 
 Dead parts summary:
 - U508: 74LS273
+- U511: LM339N
 - Q403: 2N3906
 - RAM: 4116-15 * 12
 
 TO-DO:
+- Check RAM issues, probably a solder bridge
 - Reflow solder joins near corrosion area. 
-- Make new contacts for the battery holder, using bent wires
+- Make new contacts for the battery holder, using bent wires OR add a 
 
 ## Factory configuration & bodges
 
@@ -221,6 +232,12 @@ U401 might also be compatible with TI TMS9937. Second sources are:
 
 # CRT
 
+Hand written label: "SN 179534"
+
+PCB marking: 40-051204-A
+
+PCB label: 17954 601-326-007
+
 Electrolytic capacitor list:
 | Marking | Volt | Cap    | Diameter | Pitch | Notes         |
 | ------- | ---- | ------ | -------- | ----- | ------------- |
@@ -236,6 +253,14 @@ Electrolytic capacitor list:
 | C24     | 100V | 47µF   |          |       | 63V in manual |
 
 Values match the schematics in technical manual, section A-10
+
+The tube is lightly marked but it's only lines, so everything's fine :)
+
+TO-DO:
+- Clean all that dust
+- Measure capacitor sizes
+- Test & calibrate
+- If video is bad, replace caps & measure ESR on old ones
 
 # Floppy
 
