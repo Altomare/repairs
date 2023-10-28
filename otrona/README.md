@@ -278,11 +278,41 @@ Here's a simple Mouser BOM. I have not checked ESR requirements
 
 # Floppy
 
-TO-DO
+Pinout from schematic
+ 1 /DSK CHG
+ 3 SIDE
+ 5 /RD DATA
+ 7 /INDEX
+ 9 /TRK0
+11 /WR GATE
+13 /WR DATA
+15 /STEP
+17 /DIR
+19 /MOTOR ON
+21 /DS 3
+23 /DS 2
+25 /DS 1
+27 /INDEX
+29 /READY
+31 Unconnected?
+33 /HD LD
+
+Every even pin is grounded.
 
 # Keyboard
 
-TO-DO
+Identifiers:
+- Hand-written serials on PCB:
+  - Front: 22121004
+  - Side: 22412002
+- PCB id: 40-051206 REV A "512 KEYBOARD3"
+
+Observations:
+- C3 is not populated, matches schematics
+- Slider holes have been manually enlarged
+
+Work done:
+Cleaned up rusted screws
 
 # Case
 
