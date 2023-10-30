@@ -108,6 +108,29 @@ objcopy --input-target=ihex --output-target=binary BIOS25.HEX BIOS25.BIN
 
 Note: the .HEX file is in the PHEX format. See https://www.retrotechnology.com/herbs_stuff/zasm.pdf page 63 for more information. The headers present in BIOS25.HEX appeared to be non-important for HEX -> BIN conversion.
 
+## CCP differences
+
+Extraction:
+```bash
+dd if=maslin.raw of=maslin.raw.ccp bs=512 skip=1 count=4
+dd if=mydump.raw of=mydump.raw.ccp bs=512 skip=1 count=4
+```
+
+For CCP, there are two differences: serial number and initial command.
+
+Offset 0x7 is where the automatically executed command is stored:
+* Mydump:
+  * `00 0055 424d 4954 2052 00` = No command and remnants of a "SUBMIT R"
+* Maslin:
+  * `01 4400 2020 2020 2020 20` = "D"      
+
+Serial is at offset 0x328 in the CCP:
+* Mydump: `9116 0100 0001`
+* Maslin: `9116 0100 0798`
+The first 4 bytes correspond to OEM number 0x196, and CP/M version 2.2. The remaining are the serial number.
+
+For reference, I used the following sources: [brouhaha/cpm22](https://github.com/brouhaha/cpm22)
+
 ## Layout
 
 First 3 tracks of side 0 (= 30 sectors):
