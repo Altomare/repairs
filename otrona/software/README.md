@@ -129,7 +129,31 @@ Serial is at offset 0x328 in the CCP:
 * Maslin: `9116 0100 0798`
 The first 4 bytes correspond to OEM number 0x196, and CP/M version 2.2. The remaining are the serial number.
 
+## BDOS
+
+Extraction:
+```bash
+dd if=maslin.raw of=maslin.raw.bdos bs=512 skip=5 count=7
+dd if=mydump.raw of=mydump.raw.bdos bs=512 skip=5 count=7
+```
+
+Only difference is the serial number at start. Same as CCP
+* Mydump: `9116 0100 0001`
+* Maslin: `9116 0100 0798`
+
+## Differences between CP/M 2.2 & Otrona BIOS
+
 For reference, I used the following sources: [brouhaha/cpm22](https://github.com/brouhaha/cpm22)
+I just changed the offsets in the Makefile to match the Otrona memory layout
+
+To quickly check, I exported XXD output and ran:
+`git diff --no-index --word-diff=color --word-diff-regex=. ccp-44k.bin.xxd mydump.raw.ccp.xxd`
+
+CCP:
+* Serial number (see above)
+* Start command (see above)
+
+BDOS: TODO
 
 ## Layout
 
