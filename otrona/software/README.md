@@ -153,7 +153,14 @@ CCP:
 * Serial number (see above)
 * Start command (see above)
 
-BDOS: TODO
+For BDOS, there were more changes so I decompiled it and annotated the labels for the code to match, then ran a diff.
+See `disassembly/`.
+
+BDOS:
+* Serial number (see above)
+* Some jumps are relative (Otrona) instead or absolute (cpm22)
+* More commands in the disk initialization routine on Otrona than in cpm22. TODO: make sense of it
+* Value change in `diskwr2`, in code labeled "patch 1 for use of optional blocking/deblocking". TODO: make sense of it
 
 ## Layout
 
