@@ -7,7 +7,23 @@ Stickers:
 * "Remex Slimline Products"
 
 PCB: 114761-001
+
+## Jumpers for RFD480
+
+Drive select: DS0 / DS1 / DS2 / DS3
+
+RDY:
 > On drives using Drive Control Card 114761-001, a OV static output can be provided on J1-6 as a Ready signal for those controllers that require this indication.
+See manual section 2.3.3
+
+Motor Control: select which signals control which motor
+
+| A | B | C | D | Spindle      | Stepper      |
+| x |   |   | x | Motor ON     | Drive Select |
+| x |   | x |   | Motor ON     | Motor ON     |
+|   | x | x |   | Drive Select | Drive Select |
+| x |   |   |   | Motor ON     | Always       |
+|   | x |   |   | Drive Select | Always       |
 
 ## Debug
 
