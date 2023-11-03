@@ -19,6 +19,7 @@ See manual section 2.3.3
 Motor Control: select which signals control which motor
 
 | A | B | C | D | Spindle      | Stepper      |
+| - | - | - | - | ------------ | ------------ |
 | x |   |   | x | Motor ON     | Drive Select |
 | x |   | x |   | Motor ON     | Motor ON     |
 |   | x | x |   | Drive Select | Drive Select |
