@@ -32,6 +32,20 @@ I have 2 drives from the Otrona
 
 ### Otrona Drive 0
 
+* Jumpers: RDY | DS1 | A | C
+* Warranty sticker: 275505
+* No terminator
+
+Initial state: Seems to work but head 1 does not write properly
+
+Tests:
+* Read OK
+* Write KO on head 1
+* Put in PCB from other drive, same issue
+* Resistance between head pins is the same between H0 and H1
+
+### Otrona Drive 1
+
 * Serial 306633
 * Jumpers: RDY | DS0 | A | C
 * Terminator: Beckman 899-5 R220/330 (leg 3 bent but might have been my fault...)
@@ -39,13 +53,12 @@ I have 2 drives from the Otrona
 
 Initial state: Unable to get RPM reading from a Greaseweazle. No index pulse?
 
-### Otrona Drive 1
-
-* Jumpers: RDY | DS1 | A | C
-* Warranty sticker: 275505
-* No terminator
-
-Initial state: Seems to work but head 1 does not write properly
+Tests:
+* No index pulse. Nothing changes on IC 8A (LM339N) pin 4.
+  * On drive #0 it's at 5V and goes down to 0 on index pulse
+  * On this drive, it stays at 5V.
+* Used PCB from drive #0 in drive #1, same issue. Either a cable, LED or photodiode issue. Legs seem corroded
+* It was oxidation on the Index LED connector, on the LED side. Works fine now
 
 ## References
 
