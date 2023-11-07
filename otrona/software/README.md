@@ -178,7 +178,19 @@ From BIOS source:
 > The address offset factor BOFF is added where needed so the boot code will run when loaded at it's starting address of 0FE00H.
 > The BIOS CBOOT routine is also run here to save space as the only time this routine is used is directly following a system reset.
 
+# Using a floppy emulator
+
+I managed to get it working with a Gotek using the Flashfloppy firmware.
+
+I had to put a jumper wire between pin 2 and 6 of the Gotek, in order to have a RDY signal on pin 6 as required by the Otrona.
+
+Jumpers: S0
+
+Configuration: see [IMG.CFG](IMG.CFG) & [FLASH.CFG](FLASH.CFG).
+
+Floppy images were converted to raw .img files, and put on the USB key with the .otrona.img extension.
+
 # TO-DO
 
-* How to reconstruct a floppy image to write or use with floppy emulators
+* How to reconstruct a floppy image
 * Dumped software list
