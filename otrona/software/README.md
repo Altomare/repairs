@@ -190,6 +190,45 @@ Configuration: see [IMG.CFG](IMG.CFG) & [FLASH.CFG](FLASH.CFG).
 
 Floppy images were converted to raw .img files, and put on the USB key with the .otrona.img extension.
 
+
+# System software
+
+List taken from the demonstration disk documentation
+
+Valet files:
+* VALET.VAL: "This file contains the extended VALET functions. Either AXIOM.VAL or EPSON.VAL may be copied to this file depending upon
+the graphics printer, if any, connected to the system."
+* DUMMY.VAL: Temporary file, kinda
+* Valet printer routines:
+  * AXIOM.VAL: Axiom (Seikosha) printers
+  * EPSON.VAL: Epson printers
+  * OKI83.VAL: (not sure? no reference) Okidata 83A
+
+Software:
+* MBASIC.COM
+* TIME.COM: Time & date setup. Rev 1.8 mentioned in diskette.
+* BACKUP.COM: Format disk B if needed, do a full copy and verify from A to B (system included)
+* FORMAT.COM: Format disk B
+* PORTS.BAS: Serial port setup
+* GO.COM: Execute last program remaining in memory
+* SYSDUP.COM: Copy CP/M from A: to B:
+
+
+# Making floppies
+
+Some notes about making images...
+
+Line endings should be CR-LF (=\r\n)
+
+For now I will just modify existing images. libdsk can't write teledisk so I'm starting with bitsavers' IMD image.
+```bash
+# Convert line endings to CP/M CR-LF, replace in image, convert for gotek and copy to usb key
+unix2dos ATTACHE.BAS
+cpmrm -f otr1 -T imd Attache_Boot_2.2.5.IMD 0:ATTACHE.BAS
+cpmcp -f otr1 -T imd Attache_Boot_2.2.5.IMD ATTACHE.BAS 0:ATTACHE.BAS
+hxcfe -finput:Attache_Boot_2.2.5.IMD -foutput:test.otrona.img -conv:RAW_LOADER
+```
+
 # TO-DO
 
 * How to reconstruct a floppy image
