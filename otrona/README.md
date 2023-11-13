@@ -279,25 +279,31 @@ Here's a simple Mouser BOM. I have not checked ESR requirements
 # Floppy
 
 Pinout from schematic
- 1 /DSK CHG
- 3 SIDE
- 5 /RD DATA
- 7 /INDEX
- 9 /TRK0
-11 /WR GATE
-13 /WR DATA
-15 /STEP
-17 /DIR
-19 /MOTOR ON
-21 /DS 3
-23 /DS 2
-25 /DS 1
-27 /INDEX
-29 /READY
-31 Unconnected?
-33 /HD LD
+| Otrona MB    |  # |  # | Remex RFD480   |
+| ------------ | -- | -- | -------------- |
+| /DSK CHG     |  1 | 34 | Unused (1)     |
+| SIDE         |  3 | 32 | Side Select 1  |
+| /RD DATA     |  5 | 30 | Read Data      |
+| /INDEX       |  7 | 28 | Write Control  |
+| /TRK0        |  9 | 26 | Track 00       |
+| /WR GATE     | 11 | 24 | Write Gate     |
+| /WR DATA     | 13 | 22 | Write Data     |
+| /STEP        | 15 | 20 | Step           |
+| /DIR         | 17 | 18 | Direction In   |
+| /MOTOR ON    | 19 | 16 | Motor on       |
+| /DS 3        | 21 | 14 | Drive select 2 |
+| /DS 2        | 23 | 12 | Drive select 1 |
+| /DS 1        | 25 | 10 | Drive select 0 |
+| /INDEX       | 27 | 8  | Index/Sector   |
+| /READY       | 29 | 6  | Ready (2)      |
+| N/C          | 31 | 4  | Reserved       |
+| /HD LD       | 33 | 2  | Reserved       |
 
-Every even pin is grounded.
+Notes:
+* (1) Normally "Drive Ready" but this drive PCB doesn't support it
+* (2) Normally DS3 but jumpered to RDY
+
+Every other pin is grounded.
 
 # Keyboard
 
