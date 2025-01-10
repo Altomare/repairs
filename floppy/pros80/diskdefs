@@ -1,0 +1,16 @@
+# PROS80
+diskdef pros80
+  seclen 256
+  tracks 160
+  sectrk 16
+  maxdir 128
+  # skew 4
+  # secbase 0
+  # skewtab 1,14,11,8,5,2,15,12,9,6,3,16,13,10,7,4
+  # skewtab 0,13,10,7,4,1,14,11,8,5,2,15,12,9,6,3
+  blocksize 2048
+  # boottrk should be 2, but raw file export is garbage.
+  boottrk 4
+  os 2.2
+end
+
