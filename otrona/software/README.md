@@ -156,11 +156,14 @@ CCP:
 For BDOS, there were more changes so I decompiled it and annotated the labels for the code to match, then ran a diff.
 See `disassembly/`.
 
+
+`git diff --no-index -U1 --word-diff=color --word-diff-regex=. ./bdos_d.asm maslin_bdos_d.asm`
+
 BDOS:
 * Serial number (see above)
 * Some jumps are relative (Otrona) instead or absolute (cpm22)
 * More commands in the disk initialization routine on Otrona than in cpm22. TODO: make sense of it
-* Value change in `diskwr2`, in code labeled "patch 1 for use of optional blocking/deblocking". TODO: make sense of it
+* Value change in `diskwr2`, in code labeled "patch 1 for use of optional blocking/deblocking". See [CPM22PAT.01](http://www.cpm.z80.de/download/cpm22pat.zip)
 
 ## Layout
 
@@ -190,6 +193,51 @@ Configuration: see [IMG.CFG](IMG.CFG) & [FLASH.CFG](FLASH.CFG).
 
 Floppy images were converted to raw .img files, and put on the USB key with the .otrona.img extension.
 
+## Adding official support
+
+```C
+#define _C(cyls) ((cyls) / 40 - 1)
+#define _R(rpm) ((rpm) / 60 - 5)
+#define _S(sides) ((sides) - 1)
+const static struct raw_type {
+    uint8_t nr_secs:6;
+    uint8_t nr_sides:1;
+    uint8_t has_iam:1;
+    uint8_t gap3;
+    uint8_t interleave:3;
+    uint8_t no:3;
+    uint8_t base:1;
+    uint8_t _pad:1;
+    uint8_t cskew:4;
+    uint8_t hskew:2;
+    uint8_t cyls:1;
+    uint8_t rpm:1;
+
+// Memotech
+{ 16, _S(2), _IAM, 57, 3, 1, 1, 0, 0, 0, _C(40), _R(300) }, /* Type 03 */
+{ 16, _S(2), _IAM, 57, 3, 1, 1, 0, 0, 0, _C(80), _R(300) }, /* Type 07 */
+
+// Otrona 48 TPI
+{ 10, _S(2), _IAM, 20, 5, 2, 1, 0, 0, 0, _C(40), _R(300) },
+
+
+nr_secs = 10;
+nr_sides = _S(2);
+has_iam = ?; // Index Address Mark included at the start of each track. Seems like it's present
+gap3 = 20; // Sector post-data gap, in bytes. 
+interleave = 5; // Sector numbering: 1,6,2,7,3,8,4,9,5,10
+no = 2; // 512 bytes per sector it seems
+base = 1; // ID of first sector
+_pad = 0; // Structure padding
+cskew = 0; // No skew
+hskew = 0; // No skew
+cyls = _C(40); // 40 cylinders
+rpm = _R(300); // 300 RPM
+
+        /* Default post-index gap size depends on whether the track format
+         * includes IAM or not (see uPD765A/7265 Datasheet). */
+
+```
 
 # System software
 

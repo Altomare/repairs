@@ -1172,17 +1172,17 @@ initial2:
 	ld c,0ffh
 	call sub_d205h
 	call sub_d1f5h
-	push af
-	xor a
-	ld (0da81h),a
-	pop af
+	push af		; NEW
+	xor a		; NEW
+	ld (0da81h),a	; NEW
+	pop af		; NEW
 	ret z
-	di
-	push af
-	ld a,0ffh
-	ld (0da81h),a
-	pop af
-	ei
+	di		; NEW
+	push af		; NEW
+	ld a,0ffh	; NEW
+	ld (0da81h),a	; NEW
+	pop af		; NEW
+	ei		; NEW
 	call sub_d15eh
 	ld a,0e5h
 	cp (hl)
