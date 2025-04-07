@@ -51,6 +51,62 @@ Output voltages:
 - 5V
 - -12V
 
+## Capacitors
+
+Electrolytic capacitor list for board 40-051202 rev D (1982), taken from Otrona Attaché S S/N 6043
+
+There are tantalums too but I haven't listed them yet. They might need replacing as they can fail short
+
+### List
+
+| Marking | Volt | Cap    | Diameter | Pitch | Height | Section       | Notes |
+| ------- | ---- | ------ | -------- | ----- | ------ | ------------- | ----- |
+| C2      | 200V | 1000µF | 35mm     | 10mm  | 40mm   | Input         |       |
+| C3      | 200V | 1000µF | 35mm     | 10mm  | 40mm   | Input         |       |
+| C4      | 400V | 4µF    | 12.5mm   | 40mm  | 38mm   | Input         | Axial |
+| C18     | 25V  | 330µF  | 10mm     | 5mm   | 20mm   | Output        |       |
+| C19     | 10V  | 6800µF | 18mm     | 7.5mm | 40mm   | Output        |       |
+| C20     | 25V  | 3300µF | 18mm     | 7.5mm | 40mm   | Output        |       |
+| C21     | 25V  | 3300µF | 18mm     | 7.5mm | 40mm   | Output        |       |
+| C22     | 25V  | 330µF  | 10mm     | 5mm   | 20mm   | Output        |       |
+| C23     | 10V  | 6800µF | 18mm     | 7.5mm | 40mm   | Output        |       |
+| C24     | 10V  | 6800µF | 18mm     | 7.5mm | 40mm   | Output        |       |
+| C25     | 10V  | 6800µF | 18mm     | 7.5mm | 40mm   | Output        |       |
+| C27     | 25V  | 3300µF | 18mm     | 7.5mm | 40mm   | Output        |       |
+| C30     | 25V  | 330µF  | 10mm     | 5mm   | 20mm   | Output        |       |
+
+Notes: All the tall capacitors are glued together with what looks like silicone.
+
+Values on the board all match schematics, except for C4: 400V in schematics, 450V installed.
+
+### Measured values
+
+| Marking | Cap    | ESR (Ohm) | Manufacturer      | Markings      | Notes |
+| ------- | ----   | --------- | ----------------- | ------------- | ----- |
+| C2      | 1061µF | 0.04      | Nippon Chemi-con  | C E 85°C      |       |
+| C3      | 1062µF | 0.04      | Nippon Chemi-con  | C E 85°C      |       |
+| C4      | 5.74µF | 1.94      | Sprague           | 500D 4-450DC  |       |
+| C18     |        |           |                   |               |       |
+| C19     |        |           |                   |               |       |
+| C20     |        |           |                   |               |       |
+| C22     |        |           |                   |               |       |
+| C21     |        |           |                   |               |       |
+| C23     |        |           |                   |               |       |
+| C24     |        |           |                   |               |       |
+| C25     |        |           |                   |               |       |
+| C27     |        |           |                   |               |       |
+| C30     |        |           |                   |               |       |
+
+### Replacement list
+
+Keep original caps for C2, C3, C4 as they tend to be fine and replacements are very expensive.
+
+| Quantity | Volt | Cap    | Diameter | Pitch | Replaces            | Reference    |
+| -------- | ---- | ------ | -------- | ----- | ------------------- | ------------ |
+| 4        | 10V  | 6800µF | 18mm     | 7.5mm | C19, C23, C24, C25  | EEU-FR1A682  |
+| 3        | 25V  | 3300µF | 18mm     | 7.5mm | C20, C21, C27       | EEU-FR1E332  |
+| 3        | 25V  | 330µF  | 10mm     | 5mm   | C18, C22, C30       | EEU-EB1E331B |
+
 ## Pinouts
 
 ### J8: Motherboard connector
